@@ -1,6 +1,15 @@
+import capitalize from "./capitalize";
+
 const computerPlay = () => {
   const rpc = ["rock", "paper", "scissors"];
   return rpc[Math.floor(Math.random() * rpc.length)];
+};
+
+const playerPlay = (playerInput) => {
+  const lower = playerInput.toLowerCase();
+  if (lower != "rock" || "paper" || "scissors")
+    return "please choose rock paper or scissors!";
+  return lower;
 };
 
 const playRound = (player, computer) => {
@@ -15,6 +24,5 @@ const playRound = (player, computer) => {
   }
 };
 
-const playerSelect = "rock";
 const computerSelect = computerPlay();
 console.log(playRound(playerSelect, computerSelect));
